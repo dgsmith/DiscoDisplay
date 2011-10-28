@@ -128,9 +128,10 @@
 		56DFF324145A5BF40058E79C /* SneakyButtonSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DFF31B145A5BF40058E79C /* SneakyButtonSkinnedBase.m */; };
 		56DFF325145A5BF40058E79C /* SneakyJoystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DFF31D145A5BF40058E79C /* SneakyJoystick.m */; };
 		56DFF326145A5BF40058E79C /* SneakyJoystickSkinnedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DFF31F145A5BF40058E79C /* SneakyJoystickSkinnedBase.m */; };
-		56DFF32A145A5C640058E79C /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DFF329145A5C640058E79C /* MenuLayer.m */; };
 		56DFF32D145A5E8B0058E79C /* SceneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DFF32C145A5E8B0058E79C /* SceneManager.m */; };
 		56DFF330145A5FBC0058E79C /* ControlsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DFF32F145A5FBC0058E79C /* ControlsLayer.m */; };
+		56DFF333145A71BD0058E79C /* HelpLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DFF332145A71BD0058E79C /* HelpLayer.m */; };
+		56DFF335145A72D00058E79C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DFF334145A72D00058E79C /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -381,12 +382,13 @@
 		56DFF31D145A5BF40058E79C /* SneakyJoystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystick.m; sourceTree = "<group>"; };
 		56DFF31E145A5BF40058E79C /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		56DFF31F145A5BF40058E79C /* SneakyJoystickSkinnedBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SneakyJoystickSkinnedBase.m; sourceTree = "<group>"; };
-		56DFF328145A5C640058E79C /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
-		56DFF329145A5C640058E79C /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
 		56DFF32B145A5E8B0058E79C /* SceneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneManager.h; sourceTree = "<group>"; };
 		56DFF32C145A5E8B0058E79C /* SceneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneManager.m; sourceTree = "<group>"; };
 		56DFF32E145A5FBC0058E79C /* ControlsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlsLayer.h; sourceTree = "<group>"; };
 		56DFF32F145A5FBC0058E79C /* ControlsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlsLayer.m; sourceTree = "<group>"; };
+		56DFF331145A71BD0058E79C /* HelpLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpLayer.h; sourceTree = "<group>"; };
+		56DFF332145A71BD0058E79C /* HelpLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpLayer.m; sourceTree = "<group>"; };
+		56DFF334145A72D00058E79C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +396,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56DFF335145A72D00058E79C /* CoreMotion.framework in Frameworks */,
 				560872F41451F9BE0069A2DE /* QuartzCore.framework in Frameworks */,
 				560872F61451F9BE0069A2DE /* OpenGLES.framework in Frameworks */,
 				560872F81451F9BE0069A2DE /* OpenAL.framework in Frameworks */,
@@ -428,6 +431,7 @@
 		560872F21451F9BE0069A2DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56DFF334145A72D00058E79C /* CoreMotion.framework */,
 				560872F31451F9BE0069A2DE /* QuartzCore.framework */,
 				560872F51451F9BE0069A2DE /* OpenGLES.framework */,
 				560872F71451F9BE0069A2DE /* OpenAL.framework */,
@@ -445,10 +449,10 @@
 			children = (
 				560874551451F9C10069A2DE /* AppDelegate.h */,
 				560874561451F9C10069A2DE /* AppDelegate.m */,
-				56DFF328145A5C640058E79C /* MenuLayer.h */,
-				56DFF329145A5C640058E79C /* MenuLayer.m */,
 				56DFF32E145A5FBC0058E79C /* ControlsLayer.h */,
 				56DFF32F145A5FBC0058E79C /* ControlsLayer.m */,
+				56DFF331145A71BD0058E79C /* HelpLayer.h */,
+				56DFF332145A71BD0058E79C /* HelpLayer.m */,
 				560874581451F9C10069A2DE /* RootViewController.h */,
 				560874591451F9C10069A2DE /* RootViewController.m */,
 				56DFF32B145A5E8B0058E79C /* SceneManager.h */,
@@ -977,9 +981,9 @@
 				56DFF324145A5BF40058E79C /* SneakyButtonSkinnedBase.m in Sources */,
 				56DFF325145A5BF40058E79C /* SneakyJoystick.m in Sources */,
 				56DFF326145A5BF40058E79C /* SneakyJoystickSkinnedBase.m in Sources */,
-				56DFF32A145A5C640058E79C /* MenuLayer.m in Sources */,
 				56DFF32D145A5E8B0058E79C /* SceneManager.m in Sources */,
 				56DFF330145A5FBC0058E79C /* ControlsLayer.m in Sources */,
+				56DFF333145A71BD0058E79C /* HelpLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,6 +994,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1002,6 +1007,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1010,6 +1016,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
@@ -1018,6 +1025,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

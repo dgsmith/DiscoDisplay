@@ -32,7 +32,7 @@ int count = 0;
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	RobotLayer *layer = [RobotLayer node];
+	ControlsLayer *layer = [ControlsLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -62,8 +62,8 @@ int count = 0;
         sendDataTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(sendData) userInfo:nil repeats:YES];
         
         [CCMenuItemFont setFontSize:25];
-        CCMenuItemFont *back = [CCMenuItemFont itemFromString:@"back" target:self selector:@selector(back:)];
-        CCMenu *menu = [CCMenu menuWithItems:back, nil];
+        CCMenuItemFont *help = [CCMenuItemFont itemFromString:@"Help" target:self selector:@selector(help:)];
+        CCMenu *menu = [CCMenu menuWithItems:help, nil];
         menu.position = ccp(size.width/2, 50);
         [self addChild:menu];
         
@@ -202,12 +202,12 @@ int count = 0;
 }
 
 
--(void)back:(id)sender
+-(void)help:(id)sender
 {
     [motionManager stopDeviceMotionUpdates];
     [sendDataTimer invalidate];
     SUDP_Close();
-    [SceneManager goMenu];
+    [SceneManager goHelp];
 }
 
 

@@ -16,12 +16,6 @@
 
 @implementation SceneManager
 
-+(void)goMenu
-{
-    CCLayer *layer = [MenuLayer node];
-    [SceneManager go:layer];
-}
-
 +(void)goControls
 {
     CCLayer *layer = [ControlsLayer node];

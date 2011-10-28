@@ -10,7 +10,8 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "MenuLayer.h"
+#import "SceneManager.h"
+#import "ControlsLayer.h"
 #import "RootViewController.h"
 #import "SendUDP.h"
 
@@ -113,7 +114,7 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[SceneManager goMenu];
+	[SceneManager goControls];
 }
 
 

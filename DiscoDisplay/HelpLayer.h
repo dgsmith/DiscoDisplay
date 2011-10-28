@@ -1,5 +1,5 @@
 //
-//  MenuLayer.h
+//  HelpLayer.h
 //  DiscoDisplay
 //
 //  Created by David Smith on 10/27/11.
@@ -7,13 +7,12 @@
 //
 
 #import "cocos2d.h"
-
 #import "SceneManager.h"
-#import "ControlsLayer.h"
 
-@interface MenuLayer : CCLayer
+@interface HelpLayer : CCLayer
 
--(void)onControlsSelect:(id)sender;
+-(void)back:(id)sender;
 
++(CCScene *) scene;
 
 @end

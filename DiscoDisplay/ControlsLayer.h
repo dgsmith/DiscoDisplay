@@ -29,4 +29,6 @@
     CMMotionManager *motionManager;
 }
 
+-(void)help:(id)sender;
+
 @end
