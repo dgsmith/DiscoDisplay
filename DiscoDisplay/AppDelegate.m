@@ -10,8 +10,9 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldLayer.h"
+#import "MenuLayer.h"
 #import "RootViewController.h"
+#import "SendUDP.h"
 
 @implementation AppDelegate
 
@@ -89,7 +90,9 @@
 #endif
 	
 	[director setAnimationInterval:1.0/60];
-	[director setDisplayFPS:YES];
+	[director setDisplayFPS:NO];
+    
+    [glView setMultipleTouchEnabled:YES];
 	
 	
 	// make the OpenGLView a child of the view controller
@@ -110,15 +113,18 @@
 	[self removeStartupFlicker];
 	
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	[SceneManager goMenu];
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
+    SUDP_Close();
 	[[CCDirector sharedDirector] pause];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    NSString *ipAddress = @"192.168.1.102";
+    SUDP_Init([ipAddress cStringUsingEncoding:NSASCIIStringEncoding]);
 	[[CCDirector sharedDirector] resume];
 }
 
@@ -127,14 +133,19 @@
 }
 
 -(void) applicationDidEnterBackground:(UIApplication*)application {
+    SUDP_Close();
 	[[CCDirector sharedDirector] stopAnimation];
 }
 
 -(void) applicationWillEnterForeground:(UIApplication*)application {
+    NSString *ipAddress = @"192.168.1.102";
+    SUDP_Init([ipAddress cStringUsingEncoding:NSASCIIStringEncoding]);
 	[[CCDirector sharedDirector] startAnimation];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    SUDP_Close();
+    
 	CCDirector *director = [CCDirector sharedDirector];
 	
 	[[director openGLView] removeFromSuperview];
@@ -151,6 +162,7 @@
 }
 
 - (void)dealloc {
+    SUDP_Close();
 	[[CCDirector sharedDirector] end];
 	[window release];
 	[super dealloc];
