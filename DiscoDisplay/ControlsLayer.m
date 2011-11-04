@@ -67,6 +67,26 @@ int count = 0;
         menu.position = ccp(size.width/2, 50);
         [self addChild:menu];
         
+        CCLabelTTF *text = [CCLabelTTF 
+                            labelWithString:@"Motion/Joystick Toggle" 
+                            dimensions:CGSizeMake(size.width/2 + 200, 275) 
+                            alignment:UITextAlignmentLeft
+                            lineBreakMode:UILineBreakModeWordWrap
+                            fontName:@"Helvetica" 
+                            fontSize:20];
+        text.position = ccp(size.width/2 + 250, 130);
+        [self addChild:text];
+        
+        CCLabelTTF *text1 = [CCLabelTTF 
+                            labelWithString:@"LED Pattern Selector" 
+                            dimensions:CGSizeMake(size.width/2 + 200, 150) 
+                            alignment:UITextAlignmentLeft
+                            lineBreakMode:UILineBreakModeWordWrap
+                            fontName:@"Helvetica" 
+                            fontSize:20];
+        text1.position = ccp(size.width/2 + 250, 93);
+        [self addChild:text1];
+        
         SneakyJoystickSkinnedBase *mainJoy = [[SneakyJoystickSkinnedBase alloc] init];
         mainJoy.position =          ccp(130,size.height/2);
         mainJoy.backgroundSprite =  [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 128) radius:100];
@@ -79,7 +99,7 @@ int count = 0;
         [mainJoystick release];
         
         SneakyButtonSkinnedBase *ledBut = [[[SneakyButtonSkinnedBase alloc] init] autorelease];
-        ledBut.position =           ccp(430, 100);
+        ledBut.position =           ccp(380, 100);
         ledBut.defaultSprite =      [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 128) radius:32];
         ledBut.pressSprite =        [ColoredCircleSprite circleWithColor:ccc4(0, 255, 0, 128) radius:32];
         ledBut.button =             [[[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 64, 64)] autorelease];
@@ -89,7 +109,7 @@ int count = 0;
         [self addChild:ledBut];
         
         SneakyButtonSkinnedBase *motionButton = [[[SneakyButtonSkinnedBase alloc] init] autorelease];
-        motionButton.position =         ccp(430, 190);
+        motionButton.position =         ccp(380, 205);
         motionButton.defaultSprite =    [ColoredSquareSprite squareWithColor:ccc4(255, 0, 0, 128) size:CGSizeMake(50, 25)];
         motionButton.activatedSprite =  [ColoredSquareSprite squareWithColor:ccc4(0, 0, 255, 128) size:CGSizeMake(50, 25)];
         motionButton.pressSprite =      [ColoredSquareSprite squareWithColor:ccc4(0, 255, 0, 128) size:CGSizeMake(50, 25)];
