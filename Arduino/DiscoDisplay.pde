@@ -120,7 +120,7 @@ void loop() {
   } 
   
 // This is only if there needs to be an emergency state!
-/*
+
   if (((lostConnectionCurrentMillis - lostConnectionMillis > lostConnectionInterval) && (!packetSize)) || (noConnection)) {
     noConnection = true;
     //Serial.print("lost connection at:");
@@ -132,7 +132,6 @@ void loop() {
     selector = 99;
     ledPatterns(selector);
   }
-*/
   //delay(10);
 }
 
