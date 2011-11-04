@@ -3,21 +3,20 @@
 #include <Udp.h>
 #include <Servo.h>
 
-#define SERVO1 2
-#define SERVO2 3
+#define SERVO1 12
+#define SERVO2 13
 
 // Define LED pins!!
 #define LED0 22
-#define LED1 26
+#define LED1 24
 #define LED2 28
-#define LED3 30
-#define LED4 32
-#define LED5 36
-#define LED6 40
-#define LED7 11
-#define LED8 44
-#define LED9 46
-#define LED10 48
+#define LED3 32
+#define LED4 36
+#define LED5 38
+#define LED6 42
+#define LED7 44
+#define LED8 48
+#define LED9 49
 
 // Change this to match Arduino!!
 byte mac[] = {  
@@ -87,7 +86,6 @@ void setup() {
   pinMode(LED7, OUTPUT);
   pinMode(LED8, OUTPUT);
   pinMode(LED9, OUTPUT);
-  pinMode(LED10, OUTPUT);
   
   // start everything at 0 if you want...
   servo1.write(90);
@@ -207,7 +205,6 @@ void ledPatterns(int selector) {
             digitalWrite(LED7, LOW);
             digitalWrite(LED8, LOW);
             digitalWrite(LED9, LOW);
-            digitalWrite(LED10, LOW);
             break;
         }
         case 1: { //all flashing on/off slow
@@ -231,7 +228,6 @@ void ledPatterns(int selector) {
                 digitalWrite(LED7, ledStates);
                 digitalWrite(LED8, ledStates);
                 digitalWrite(LED9, ledStates);
-                digitalWrite(LED10, ledStates);
             }
             break;
         }
@@ -256,7 +252,6 @@ void ledPatterns(int selector) {
                 digitalWrite(LED7, ledStates);
                 digitalWrite(LED8, ledStates);
                 digitalWrite(LED9, ledStates);
-                digitalWrite(LED10, ledStates);
             }
             break;
         }
@@ -278,7 +273,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 1:
                         currentLED1++;
@@ -292,7 +286,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 2:
                         currentLED1++;
@@ -306,7 +299,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 3:
                         currentLED1++;
@@ -320,7 +312,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 4:
                         currentLED1++;
@@ -334,7 +325,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 5:
                         currentLED1++;
@@ -348,7 +338,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 6:
                         currentLED1++;
@@ -362,7 +351,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 7:
                         currentLED1++;
@@ -376,7 +364,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, LOW);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 8:
                         currentLED1++;
@@ -390,10 +377,9 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, LOW);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 9:
-                        currentLED1++;
+                        currentLED1=0;
                         digitalWrite(LED0, HIGH);
                         digitalWrite(LED1, HIGH);
                         digitalWrite(LED2, HIGH);
@@ -404,21 +390,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, HIGH);
-                        break;
-                    case 10:
-                        currentLED1 = 0;
-                        digitalWrite(LED0, HIGH);
-                        digitalWrite(LED1, HIGH);
-                        digitalWrite(LED2, HIGH);
-                        digitalWrite(LED3, HIGH);
-                        digitalWrite(LED4, HIGH);
-                        digitalWrite(LED5, HIGH);
-                        digitalWrite(LED6, HIGH);
-                        digitalWrite(LED7, HIGH);
-                        digitalWrite(LED8, HIGH);
-                        digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, LOW);
                         break;
                     default:
                         break;
@@ -444,7 +415,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 1:
                         currentLED2++;
@@ -458,7 +428,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 2:
                         currentLED2++;
@@ -472,7 +441,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 3:
                         currentLED2++;
@@ -486,7 +454,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 4:
                         currentLED2++;
@@ -500,7 +467,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 5:
                         currentLED2++;
@@ -514,7 +480,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 6:
                         currentLED2++;
@@ -528,7 +493,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 7:
                         currentLED2++;
@@ -542,7 +506,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, LOW);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 8:
                         currentLED2++;
@@ -556,10 +519,9 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, LOW);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 9:
-                        currentLED2++;
+                        currentLED2=0;
                         digitalWrite(LED0, HIGH);
                         digitalWrite(LED1, HIGH);
                         digitalWrite(LED2, HIGH);
@@ -570,21 +532,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, HIGH);
-                        break;
-                    case 10:
-                        currentLED2 = 0;
-                        digitalWrite(LED0, HIGH);
-                        digitalWrite(LED1, HIGH);
-                        digitalWrite(LED2, HIGH);
-                        digitalWrite(LED3, HIGH);
-                        digitalWrite(LED4, HIGH);
-                        digitalWrite(LED5, HIGH);
-                        digitalWrite(LED6, HIGH);
-                        digitalWrite(LED7, HIGH);
-                        digitalWrite(LED8, HIGH);
-                        digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, LOW);
                         break;
                     default:
                         break;
@@ -592,7 +539,7 @@ void ledPatterns(int selector) {
             }
             break;
         }
-        case 5: { //down the line (multiple, 3 spacing) slow
+        case 5: { //all switch, like x-mas
             currentMillis = millis();
             if (currentMillis - previousMillis > slowInterval) {
                 previousMillis = currentMillis;
@@ -610,7 +557,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, LOW);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, LOW);
                         break;
                     case 1:
                         currentLED3 = 0;
@@ -624,7 +570,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, LOW);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, HIGH);
                         break;
                     default:
                         break;
@@ -650,7 +595,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 1:
                         currentLED6++;
@@ -664,7 +608,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 2:
                         currentLED6++;
@@ -678,7 +621,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 3:
                         currentLED6++;
@@ -692,7 +634,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 4:
                         currentLED6++;
@@ -706,7 +647,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, LOW);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 5:
                         currentLED6++;
@@ -720,7 +660,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, LOW);
                         digitalWrite(LED8, LOW);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 6:
                         currentLED6++;
@@ -734,7 +673,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, LOW);
                         digitalWrite(LED8, LOW);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 7:
                         currentLED6++;
@@ -748,7 +686,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, LOW);
                         digitalWrite(LED8, LOW);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, LOW);
                         break;
                     case 8:
                         currentLED6++;
@@ -762,7 +699,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, LOW);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, LOW);
                         break;
                     case 9:
                         currentLED6++;
@@ -776,7 +712,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, LOW);
                         break;
                     case 10:
                         currentLED6++;
@@ -789,8 +724,7 @@ void ledPatterns(int selector) {
                         digitalWrite(LED6, HIGH);
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
-                        digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, LOW);
+                        digitalWrite(LED9, LOW);
                         break;
                     case 11:
                         currentLED6++;
@@ -802,9 +736,8 @@ void ledPatterns(int selector) {
                         digitalWrite(LED5, HIGH);
                         digitalWrite(LED6, HIGH);
                         digitalWrite(LED7, HIGH);
-                        digitalWrite(LED8, HIGH);
+                        digitalWrite(LED8, LOW);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, LOW);
                         break;
                     case 12:
                         currentLED6++;
@@ -815,10 +748,9 @@ void ledPatterns(int selector) {
                         digitalWrite(LED4, HIGH);
                         digitalWrite(LED5, HIGH);
                         digitalWrite(LED6, HIGH);
-                        digitalWrite(LED7, HIGH);
+                        digitalWrite(LED7, LOW);
                         digitalWrite(LED8, LOW);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, LOW);
                         break;
                     case 13:
                         currentLED6++;
@@ -828,11 +760,10 @@ void ledPatterns(int selector) {
                         digitalWrite(LED3, HIGH);
                         digitalWrite(LED4, HIGH);
                         digitalWrite(LED5, HIGH);
-                        digitalWrite(LED6, HIGH);
+                        digitalWrite(LED6, LOW);
                         digitalWrite(LED7, LOW);
                         digitalWrite(LED8, LOW);
                         digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, LOW);
                         break;
                     case 14:
                         currentLED6++;
@@ -841,12 +772,11 @@ void ledPatterns(int selector) {
                         digitalWrite(LED2, HIGH);
                         digitalWrite(LED3, HIGH);
                         digitalWrite(LED4, HIGH);
-                        digitalWrite(LED5, HIGH);
+                        digitalWrite(LED5, LOW);
                         digitalWrite(LED6, LOW);
                         digitalWrite(LED7, LOW);
                         digitalWrite(LED8, LOW);
-                        digitalWrite(LED9, LOW);
-                        digitalWrite(LED10, HIGH);
+                        digitalWrite(LED9, HIGH);
                         break;
                     case 15:
                         currentLED6++;
@@ -854,33 +784,18 @@ void ledPatterns(int selector) {
                         digitalWrite(LED1, HIGH);
                         digitalWrite(LED2, HIGH);
                         digitalWrite(LED3, HIGH);
-                        digitalWrite(LED4, HIGH);
+                        digitalWrite(LED4, LOW);
                         digitalWrite(LED5, LOW);
                         digitalWrite(LED6, LOW);
                         digitalWrite(LED7, LOW);
-                        digitalWrite(LED8, LOW);
+                        digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     case 16:
                         currentLED6++;
                         digitalWrite(LED0, HIGH);
                         digitalWrite(LED1, HIGH);
                         digitalWrite(LED2, HIGH);
-                        digitalWrite(LED3, HIGH);
-                        digitalWrite(LED4, LOW);
-                        digitalWrite(LED5, LOW);
-                        digitalWrite(LED6, LOW);
-                        digitalWrite(LED7, LOW);
-                        digitalWrite(LED8, HIGH);
-                        digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
-                        break;
-                    case 17:
-                        currentLED6++;
-                        digitalWrite(LED0, HIGH);
-                        digitalWrite(LED1, HIGH);
-                        digitalWrite(LED2, HIGH);
                         digitalWrite(LED3, LOW);
                         digitalWrite(LED4, LOW);
                         digitalWrite(LED5, LOW);
@@ -888,9 +803,8 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
-                    case 18:
+                    case 17:
                         currentLED6++;
                         digitalWrite(LED0, HIGH);
                         digitalWrite(LED1, HIGH);
@@ -902,9 +816,8 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
-                    case 19:
+                    case 18:
                         currentLED6++;
                         digitalWrite(LED0, HIGH);
                         digitalWrite(LED1, LOW);
@@ -916,27 +829,25 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
+                        break;
+                    case 19:
+                        currentLED6++;
+                        digitalWrite(LED0, LOW);
+                        digitalWrite(LED1, LOW);
+                        digitalWrite(LED2, LOW);
+                        digitalWrite(LED3, LOW);
+                        digitalWrite(LED4, HIGH);
+                        digitalWrite(LED5, HIGH);
+                        digitalWrite(LED6, HIGH);
+                        digitalWrite(LED7, HIGH);
+                        digitalWrite(LED8, HIGH);
+                        digitalWrite(LED9, HIGH);
                         break;
                     case 20:
                         currentLED6++;
                         digitalWrite(LED0, LOW);
                         digitalWrite(LED1, LOW);
                         digitalWrite(LED2, LOW);
-                        digitalWrite(LED3, LOW);
-                        digitalWrite(LED4, HIGH);
-                        digitalWrite(LED5, HIGH);
-                        digitalWrite(LED6, HIGH);
-                        digitalWrite(LED7, HIGH);
-                        digitalWrite(LED8, HIGH);
-                        digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
-                        break;
-                    case 21:
-                        currentLED6++;
-                        digitalWrite(LED0, LOW);
-                        digitalWrite(LED1, LOW);
-                        digitalWrite(LED2, LOW);
                         digitalWrite(LED3, HIGH);
                         digitalWrite(LED4, HIGH);
                         digitalWrite(LED5, HIGH);
@@ -944,9 +855,8 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
-                    case 22:
+                    case 21:
                         currentLED6++;
                         digitalWrite(LED0, LOW);
                         digitalWrite(LED1, LOW);
@@ -958,9 +868,8 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
-                    case 23:
+                    case 22:
                         currentLED6++;
                         digitalWrite(LED0, LOW);
                         digitalWrite(LED1, HIGH);
@@ -972,9 +881,8 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
-                    case 24:
+                    case 23:
                         currentLED6++;
                         digitalWrite(LED0, LOW);
                         digitalWrite(LED1, LOW);
@@ -986,10 +894,8 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
-
-                    case 25:
+                    case 24:
                         currentLED6 = 0;
                         digitalWrite(LED0, LOW);
                         digitalWrite(LED1, LOW);
@@ -1001,7 +907,6 @@ void ledPatterns(int selector) {
                         digitalWrite(LED7, HIGH);
                         digitalWrite(LED8, HIGH);
                         digitalWrite(LED9, HIGH);
-                        digitalWrite(LED10, HIGH);
                         break;
                     default:
                         break;
@@ -1029,7 +934,6 @@ void ledPatterns(int selector) {
                 digitalWrite(LED7, ledStates);
                 digitalWrite(LED8, ledStates);
                 digitalWrite(LED9, ledStates);
-                digitalWrite(LED10, ledStates);
             }
             break;
         }
