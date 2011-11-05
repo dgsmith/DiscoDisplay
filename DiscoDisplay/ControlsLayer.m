@@ -74,9 +74,10 @@ int count = 0;
                             lineBreakMode:UILineBreakModeWordWrap
                             fontName:@"Helvetica" 
                             fontSize:20];
-        text.position = ccp(size.width/2 + 250, 130);
+        text.position = ccp(size.width/2 + 250, 80);
         [self addChild:text];
         
+        /*
         CCLabelTTF *text1 = [CCLabelTTF 
                             labelWithString:@"LED Pattern Selector" 
                             dimensions:CGSizeMake(size.width/2 + 200, 150) 
@@ -86,6 +87,7 @@ int count = 0;
                             fontSize:20];
         text1.position = ccp(size.width/2 + 250, 93);
         [self addChild:text1];
+         */
         
         SneakyJoystickSkinnedBase *mainJoy = [[SneakyJoystickSkinnedBase alloc] init];
         mainJoy.position =          ccp(130,size.height/2);
@@ -97,6 +99,7 @@ int count = 0;
         [mainJoy release];
         [mainJoystick release];
         
+        /*
         SneakyButtonSkinnedBase *ledBut = [[[SneakyButtonSkinnedBase alloc] init] autorelease];
         ledBut.position =           ccp(380, 100);
         ledBut.defaultSprite =      [ColoredCircleSprite circleWithColor:ccc4(255, 0, 0, 128) radius:32];
@@ -106,9 +109,10 @@ int count = 0;
         ledPattern.isToggleable = NO;
         ledPattern.isHoldable = YES;
         [self addChild:ledBut];
+         */
         
         SneakyButtonSkinnedBase *motionButton = [[[SneakyButtonSkinnedBase alloc] init] autorelease];
-        motionButton.position =         ccp(380, 205);
+        motionButton.position =         ccp(380, 155);
         motionButton.defaultSprite =    [ColoredSquareSprite squareWithColor:ccc4(255, 0, 0, 128) size:CGSizeMake(50, 25)];
         motionButton.activatedSprite =  [ColoredSquareSprite squareWithColor:ccc4(0, 0, 255, 128) size:CGSizeMake(50, 25)];
         motionButton.pressSprite =      [ColoredSquareSprite squareWithColor:ccc4(0, 255, 0, 128) size:CGSizeMake(50, 25)];
@@ -117,11 +121,13 @@ int count = 0;
         motionSelector.isToggleable = YES;
         [self addChild:motionButton];
         
+        /*
         check = [CCLabelTTF labelWithString:@"" 
                                    fontName:@"Helvetica" 
                                    fontSize:20];
         check.position =            ccp(size.width/2, 20);
         [self addChild:check];
+         */
         
         [self scheduleUpdate];
     }
@@ -130,7 +136,7 @@ int count = 0;
 
 -(void) update: (ccTime) dt
 {
-    if (motionSelector.value) {
+    if (!motionSelector.value) {
         useMotion = NO;
     } else {
         useMotion = YES;
@@ -163,12 +169,14 @@ int count = 0;
         x = roundf(((roll + TILT_LIMIT)*255)/(2*TILT_LIMIT));
     }
     
-    int ledOn;
+    int ledOn=0;
+    /*
     if (ledPattern.active) {
         ledOn = 1;
     } else {
         ledOn = 0;
     }
+     */
     
     data[0] = 'b';
     data[1] = (unsigned char) y;
@@ -176,7 +184,7 @@ int count = 0;
     data[3] = (unsigned char) ledOn;
     data[4] = 'e';
     
-    check.string = [NSString stringWithFormat:@"x:%i, y:%i",y,x];
+    //check.string = [NSString stringWithFormat:@"x:%i, y:%i",y,x];
     
 }
 
