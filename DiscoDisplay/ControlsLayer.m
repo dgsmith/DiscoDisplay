@@ -140,9 +140,9 @@ int count = 0;
     float ttemp, stemp;
     float pitch, roll;
     if (!useMotion) {
-        ttemp = mainJoystick.stickPosition.y;
+        ttemp = mainJoystick.stickPosition.x;
         y = roundf(((ttemp+100)*255)/200);
-        stemp = mainJoystick.stickPosition.x;
+        stemp = mainJoystick.stickPosition.y;
         x = roundf(((stemp+100)*255)/200);
     } else {
         roll = motionManager.deviceMotion.attitude.roll;
@@ -171,8 +171,8 @@ int count = 0;
     }
     
     data[0] = 'b';
-    data[1] = (unsigned char) x;
-    data[2] = (unsigned char) y;
+    data[1] = (unsigned char) y;
+    data[2] = (unsigned char) x;
     data[3] = (unsigned char) ledOn;
     data[4] = 'e';
     
