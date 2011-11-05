@@ -187,7 +187,7 @@ void controls(int *data) {
   if(selector > 6) {
     selector = 0;
   }
-  //send to display pettern
+  //send to display pattern
   ledPatterns(selector);
 }
 

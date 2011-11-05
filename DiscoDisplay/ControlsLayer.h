@@ -19,8 +19,10 @@
     
     SneakyButton *ledPattern;
     SneakyButton *motionSelector;
+    
+    CCLabelTTF *check;
 
-    unsigned char data[10];
+    unsigned char data[5];
     
     NSTimer *sendDataTimer;
     

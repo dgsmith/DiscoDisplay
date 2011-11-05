@@ -93,7 +93,6 @@ int count = 0;
         mainJoy.thumbSprite =       [ColoredCircleSprite circleWithColor:ccc4(0, 0, 255, 200) radius:40];
         mainJoy.joystick =          [[[SneakyJoystick alloc] initWithRect:CGRectMake(0,0,100,100)] autorelease];
         mainJoystick = [mainJoy.joystick retain];
-        
         [self addChild:mainJoy];
         [mainJoy release];
         [mainJoystick release];
@@ -116,7 +115,13 @@ int count = 0;
         motionButton.button =           [[[SneakyButton alloc] initWithRect:CGRectMake(0, 0, 50, 25)] autorelease];
         motionSelector = [motionButton.button retain];
         motionSelector.isToggleable = YES;
-        [self addChild:motionButton];        
+        [self addChild:motionButton];
+        
+        check = [CCLabelTTF labelWithString:@"" 
+                                   fontName:@"Helvetica" 
+                                   fontSize:20];
+        check.position =            ccp(size.width/2, 20);
+        [self addChild:check];
         
         [self scheduleUpdate];
     }
@@ -131,14 +136,14 @@ int count = 0;
         useMotion = YES;
     }
     
-    int t,s;
+    int y,x;
     float ttemp, stemp;
     float pitch, roll;
     if (!useMotion) {
         ttemp = mainJoystick.stickPosition.y;
-        t = roundf(((ttemp+50)*255)/100);
+        y = roundf(((ttemp+100)*255)/200);
         stemp = mainJoystick.stickPosition.x;
-        s = roundf(((stemp+50)*255)/100);
+        x = roundf(((stemp+100)*255)/200);
     } else {
         roll = motionManager.deviceMotion.attitude.roll;
         if (roll > TILT_LIMIT) {
@@ -154,8 +159,8 @@ int count = 0;
         if (pitch < -TILT_LIMIT) {
             pitch = -TILT_LIMIT;
         }
-        t = roundf(((pitch + TILT_LIMIT)*255)/(2*TILT_LIMIT));
-        s = roundf(((roll + TILT_LIMIT)*255)/(2*TILT_LIMIT));
+        y = roundf(((pitch + TILT_LIMIT)*255)/(2*TILT_LIMIT));
+        x = roundf(((roll + TILT_LIMIT)*255)/(2*TILT_LIMIT));
     }
     
     int ledOn;
@@ -166,10 +171,12 @@ int count = 0;
     }
     
     data[0] = 'b';
-    data[1] = (unsigned char) t;
-    data[2] = (unsigned char) s;
+    data[1] = (unsigned char) y;
+    data[2] = (unsigned char) x;
     data[3] = (unsigned char) ledOn;
     data[4] = 'e';
+    
+    check.string = [NSString stringWithFormat:@"x:%i, y:%i",y,x];
     
 }
 
