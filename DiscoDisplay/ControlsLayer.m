@@ -171,8 +171,8 @@ int count = 0;
     }
     
     data[0] = 'b';
-    data[1] = (unsigned char) y;
-    data[2] = (unsigned char) x;
+    data[1] = (unsigned char) x;
+    data[2] = (unsigned char) y;
     data[3] = (unsigned char) ledOn;
     data[4] = 'e';
     
